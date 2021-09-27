@@ -1,0 +1,28 @@
+body {
+    padding: 0;
+    margin: auto auto;
+    background: #993f70;
+    color: #eee;
+    text-align: center;
+    margin-top: 2em;
+    font-family: sans;
+}
+
+#game {
+    width: 640px;
+    height: 598px;
+    position: relative;
+    display: inline-block;
+    border: 2px solid black;
+  }
+
+@media only screen and (min-width: 1000px) {
+  #main_content {
+    margin: 0 20%;
+  }
+}
+
+#help_text {
+  padding-bottom: 0.5em;
+  margin: 0 auto;
+}

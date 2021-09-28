@@ -16,7 +16,7 @@ export class Button extends Thing {
         ctx.fillRect(this.x + 2, this.y + 2, this.width - 4, this.height - 4);
         ctx.fillStyle = this.outline;
         ctx.font = "16pt Sans";
-        ctx.fillText(this.text, this.x + ((this.width / 2) - (ctx.measureText(this.text).width / 2)), this.y + this.height / 4 + this.height / 2);
+        ctx.fillText(this.text, this.x + ((this.width / 2) - (ctx.measureText(this.text).width / 2)), this.y + this.height / 2 + 8);
     }
 
     update(ratio, keyboard, mouse, func=this.leftClicked, self=this) {

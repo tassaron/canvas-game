@@ -1,10 +1,17 @@
 export class Thing {
-    constructor(x, y, width, height) {
+    constructor(x, y, width, height, src=null) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
+        this.src = src;
     }
+
+    draw(ctx, drawSprite) {
+        if (this.src == null) {return}
+        drawSprite[this.src](this.x, this.y);
+    }
+
 
     collides(other) {
         return (this.x + this.width > other.x && this.x < other.x + other.width && other.y + other.height > this.y && other.y < this.y + this.height);
@@ -14,8 +21,7 @@ export class Thing {
 
 export class AnimatedThing extends Thing {
     constructor(x, y, width, height, src, animFrames, animTiming) {
-        super(x, y, width, height);
-        this.src = src;
+        super(x, y, width, height, src);
         this.animFrames = animFrames;
         this.animTiming = animTiming;
         this.anim = 0.0;

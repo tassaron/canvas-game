@@ -26,7 +26,9 @@ export function addEventListeners(canvas) {
     canvas.addEventListener("mousedown", mouseDownHandler, false);
     canvas.addEventListener("mousemove", mouseMoveHandler, false);
     document.addEventListener('contextmenu', function (e) {
-        e.preventDefault();
+        if (gamediv.contains(e.target)) {
+            e.preventDefault();
+        }
     }, false);
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
